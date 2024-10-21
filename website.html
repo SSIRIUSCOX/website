@@ -1,0 +1,503 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+html {
+	font-size: 19px;
+}
+
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media print {
+	html {
+		font-size: 13px;
+	}
+}
+
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
+}
+
+h1 {
+	font-size:3em;
+}
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
+}
+
+h1, 
+h2, 
+h3{
+	text-align: center;
+}
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
+}
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
+.md-tag {
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
+}
+
+.md-toc {
+	margin-top: 40px;
+}
+
+.md-toc-content {
+	padding-bottom: 20px;
+}
+
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
+}
+
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.md-fences .code-tooltip {
+	bottom: -2em !important;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+</style><title>website</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><em><strong><span>目录</span></strong></em></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n1426"><a class="md-toc-inner" href="#这是一个网站汇总"><em><strong>这是一个网站汇总</strong></em></a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1428"><a class="md-toc-inner" href="#休闲类"><strong>休闲类</strong></a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1430"><a class="md-toc-inner" href="#动漫资源部分">动漫资源部分 </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1464"><a class="md-toc-inner" href="#字幕部分">字幕部分 </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1498"><a class="md-toc-inner" href="#电影剧集部分">电影剧集部分</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1532"><a class="md-toc-inner" href="#评分资料网站">评分/资料网站 </a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1554"><a class="md-toc-inner" href="#书">书</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1564"><a class="md-toc-inner" href="#漫画类">漫画类</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1586"><a class="md-toc-inner" href="#在线观看网站">在线观看网站</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n1616"><a class="md-toc-inner" href="#专业性的网站内容">专业性的网站内容</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1617"><a class="md-toc-inner" href="#技术相关部分">技术相关部分</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1631"><a class="md-toc-inner" href="#搜索相关部分">搜索相关部分</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1649"><a class="md-toc-inner" href="#qbittorrent-tracker-相关">Qbittorrent tracker 相关</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1667"><a class="md-toc-inner" href="#powershell-学习">powershell 学习</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n1681"><a class="md-toc-inner" href="#ffmpeg">ffmpeg </a></span></p></div><hr /><h1 id='这是一个网站汇总'><em><strong><span>这是一个网站汇总</span></strong></em></h1><p>&nbsp;</p><h2 id='休闲类'><strong><span>休闲类</span></strong></h2><hr /><h4 id='动漫资源部分'><span>动漫资源部分 </span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://garden.breadio.wiki/'><span>Anime Garden</span></a></td><td style='text-align:center;' ><a href='https://garden.breadio.wiki' target='_blank' class='url'>https://garden.breadio.wiki</a></td><td style='text-align:center;' ><span>英文主导的动漫花园，其文件多用pikpak网盘，</span></td></tr><tr><td style='text-align:center;' ><a href='https://yhdm33.com/'><span>樱花动漫</span></a></td><td style='text-align:center;' ><a href='https://yhdm33.com/' target='_blank' class='url'>https://yhdm33.com/</a></td><td style='text-align:center;' ><span>不是常见的在线播放，中文，有评分和简介，界面友好</span></td></tr><tr><td style='text-align:center;' ><a href='https://bangumi.moe/'><span>萌番组</span></a></td><td style='text-align:center;' ><a href='https://bangumi.moe/' target='_blank' class='url'>https://bangumi.moe/</a></td><td style='text-align:center;' ><span>新动漫更新，也提供磁力下载</span></td></tr><tr><td style='text-align:center;' ><a href='https://share.dmhy.org/'><span>动漫花园</span></a></td><td style='text-align:center;' ><a href='https://share.dmhy.org/' target='_blank' class='url'>https://share.dmhy.org/</a></td><td style='text-align:center;' ><span>中文网站，资源算齐了，有一点点广告但不影响</span></td></tr><tr><td style='text-align:center;' ><a href='https://nyaa.si/'><span>Nyaa</span></a></td><td style='text-align:center;' ><a href='https://nyaa.si/' target='_blank' class='url'>https://nyaa.si/</a></td><td style='text-align:center;' ><span>非常多资源的英文站点,磁力链接</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.cilicao.com/?'><span>磁力草</span></a></td><td style='text-align:center;' ><a href='https://www.cilicao.com/' target='_blank' class='url'>https://www.cilicao.com/</a><span>?</span></td><td style='text-align:center;' ><span>测试了一下也还不错</span></td></tr><tr><td style='text-align:center;' ><a href='https://mikan.yujiangqaq.com/'><span>蜜柑计划 - Mikan Project</span></a></td><td style='text-align:center;' ><a href='https://mikan.yujiangqaq.com/' target='_blank' class='url'>https://mikan.yujiangqaq.com/</a></td><td style='text-align:center;' ><span>新番国内字幕资源下载，整合的不错</span></td></tr></tbody></table></figure><h4 id='字幕部分'><span>字幕部分 </span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://www.ddzimu.com/'><span>点点字幕</span></a></td><td style='text-align:center;' ><a href='https://www.ddzimu.com/' target='_blank' class='url'>https://www.ddzimu.com/</a></td><td style='text-align:center;' ><span>剧集电影优先（应该）</span></td></tr><tr><td style='text-align:center;' ><a href='https://bbs.acgrip.com/'><span>anime字幕论坛</span></a></td><td style='text-align:center;' ><a href='https://bbs.acgrip.com/' target='_blank' class='url'>https://bbs.acgrip.com/</a></td><td style='text-align:center;' ><span>字幕论坛，也能下载字幕</span></td></tr><tr><td style='text-align:center;' ><a href='https://assrt.net/'><span>射手站</span></a></td><td style='text-align:center;' ><a href='https://assrt.net/' target='_blank' class='url'>https://assrt.net/</a></td><td style='text-align:center;' ><span>适合动漫和各类影视</span></td></tr><tr><td style='text-align:center;' ><a href='https://vcb-s.com/'><span>Vcb</span></a></td><td style='text-align:center;' ><a href='https://vcb-s.com/' target='_blank' class='url'>https://vcb-s.com/</a></td><td style='text-align:center;' ><span>还可以。</span></td></tr><tr><td style='text-align:center;' ><a href='https://subhd.tv/'><span>SubHD</span></a></td><td style='text-align:center;' ><a href='https://subhd.tv/' target='_blank' class='url'>https://subhd.tv/</a></td><td style='text-align:center;' ><span>页面内容多，适合范围广，优先</span></td></tr><tr><td style='text-align:center;' ><a href='https://zimuku.vip/'><span>字幕库</span></a></td><td style='text-align:center;' ><a href='https://zimuku.vip/' target='_blank' class='url'>https://zimuku.vip/</a></td><td style='text-align:center;' ><span>虽然进网页有验证，但是界面不错，字幕有评分</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.opensubtitles.org/zh'><span>opensubtitle</span></a></td><td style='text-align:center;' ><a href='https://www.opensubtitles.org/zh' target='_blank' class='url'>https://www.opensubtitles.org/zh</a></td><td style='text-align:center;' ><span>英文界面，新番也有，还行</span></td></tr></tbody></table></figure><h4 id='电影剧集部分'><span>电影剧集部分</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://www.yinfans.me/'><span>音范丝</span></a></td><td style='text-align:center;' ><a href='https://www.yinfans.me/' target='_blank' class='url'>https://www.yinfans.me/</a></td><td style='text-align:center;' ><span>4K和普通都有，电影为主</span></td></tr><tr><td style='text-align:center;' ><a href='https://anybt.eth.link/'><span>AnyBT</span></a></td><td style='text-align:center;' ><a href='https://anybt.eth.link/' target='_blank' class='url'>https://anybt.eth.link/</a></td><td style='text-align:center;' ><span>搜动漫电影剧集，十分推荐，英文网站</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.1lou.me/'><span>BT之家</span></a></td><td style='text-align:center;' ><a href='https://www.1lou.me/' target='_blank' class='url'>https://www.1lou.me/</a></td><td style='text-align:center;' ><span>中文站点，</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.cilixiong.com/'><span>磁力熊</span></a></td><td style='text-align:center;' ><a href='https://www.cilixiong.com/' target='_blank' class='url'>https://www.cilixiong.com/</a></td><td style='text-align:center;' ><span>中文站点</span></td></tr><tr><td style='text-align:center;' ><a href='https://tgx.rs/'><span>TXG</span></a></td><td style='text-align:center;' ><a href='https://tgx.rs/' target='_blank' class='url'>https://tgx.rs/</a></td><td style='text-align:center;' ><span>英文站点，也还行</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.cilicao.com/?'><span>磁力草</span></a></td><td style='text-align:center;' ><a href='https://www.cilicao.com/' target='_blank' class='url'>https://www.cilicao.com/</a><span>?</span></td><td style='text-align:center;' ><span>测试了一下也还不错</span></td></tr><tr><td style='text-align:center;' ><a href=''><span>磁力龟</span></a></td><td style='text-align:center;' ><a href='https://www.ciligui.org/' target='_blank' class='url'>https://www.ciligui.org/</a></td><td style='text-align:center;' ><span>挺全的，动漫电影应该都有，还能看到种子数</span></td></tr></tbody></table></figure><h4 id='评分资料网站'><span>评分/资料网站 </span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://bgm.tv/'><span>Bangumi</span></a></td><td style='text-align:center;' ><a href='https://bgm.tv/' target='_blank' class='url'>https://bgm.tv/</a></td><td style='text-align:center;' ><span>动漫类评价网站</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.imdb.com/'><span>IMDb</span></a></td><td style='text-align:center;' ><a href='https://www.imdb.com/' target='_blank' class='url'>https://www.imdb.com/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://www.metacritic.com/'><span>metacritic</span></a></td><td style='text-align:center;' ><a href='https://www.metacritic.com/' target='_blank' class='url'>https://www.metacritic.com/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://anidb.net/'><span>AniDB</span></a></td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' ><span>英文动漫网，很多信息</span></td></tr></tbody></table></figure><h4 id='书'><span>书</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://www.fantasticfiction.com/'><span>科幻网站</span></a></td><td style='text-align:center;' ><a href='https://www.fantasticfiction.com/' target='_blank' class='url'>https://www.fantasticfiction.com/</a></td><td style='text-align:center;' ><span>科幻书和作家网站（查作品）</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.goodreads.com/'><span>goodread</span></a></td><td style='text-align:center;' ><a href='https://www.goodreads.com/' target='_blank' class='url'>https://www.goodreads.com/</a></td><td style='text-align:center;' ><span>书评网站，很大，英文站</span></td></tr><tr><td style='text-align:center;' ><a href='https://z-lib.id/'><span>zlibrary</span></a></td><td style='text-align:center;' ><a href='https://z-lib.id/' target='_blank' class='url'>https://z-lib.id/</a></td><td style='text-align:center;' ><span>电子书查找下载</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.gutenberg.org/'><span>guteberg</span></a></td><td style='text-align:center;' ><a href='https://www.gutenberg.org/' target='_blank' class='url'>https://www.gutenberg.org/</a></td><td style='text-align:center;' ><span>电子书下载，zlib找不到可以在这里找</span></td></tr></tbody></table></figure><h4 id='漫画类'><span>漫画类</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://mhx12.com/'><span>漫自由</span></a></td><td style='text-align:center;' ><a href='https://mhx12.com/' target='_blank' class='url'>https://mhx12.com/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://mangahub.io/'><span>MangaHub</span></a></td><td style='text-align:center;' ><a href='https://mangahub.io/' target='_blank' class='url'>https://mangahub.io/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://comixextra.com/popular-comic'><span>ComicExtra</span></a></td><td style='text-align:center;' ><a href='https://comixextra.com/popular-comic' target='_blank' class='url'>https://comixextra.com/popular-comic</a></td><td style='text-align:center;' ><span>欧美漫画网站</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure><h4 id='在线观看网站'><span>在线观看网站</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://yinghe.app/'><span>硬核指南 - 够高清才是真硬核！ (yinghe.app)</span></a></td><td style='text-align:center;' ><a href='https://yinghe.app/' target='_blank' class='url'>https://yinghe.app/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://czzy.top/meijutt'><span>美剧 _ 厂长资源 (czzy.top)</span></a></td><td style='text-align:center;' ><a href='https://czzy.top/meijutt' target='_blank' class='url'>https://czzy.top/meijutt</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://www.yjys.cc.ua/'><span>缘觉影视</span></a></td><td style='text-align:center;' ><a href='https://www.yjys.cc.ua/' target='_blank' class='url'>https://www.yjys.cc.ua/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://www.acg.party/'><span>次元派对</span></a></td><td style='text-align:center;' ><a href='https://www.acg.party/' target='_blank' class='url'>https://www.acg.party/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' ><a href='https://soupian.pro/'><span>搜片</span></a></td><td style='text-align:center;' ><a href='https://soupian.pro/' target='_blank' class='url'>https://soupian.pro/</a></td><td style='text-align:center;' >&nbsp;</td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure><h2 id='专业性的网站内容'><span>专业性的网站内容</span></h2><h4 id='技术相关部分'><span>技术相关部分</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://limbopro.com/'><span>毒奶主页</span></a></td><td style='text-align:center;' ><a href='https://limbopro.com/' target='_blank' class='url'>https://limbopro.com/</a></td><td style='text-align:center;' ><span>个人主页站点，包含影视，技术类帖</span></td></tr><tr><td style='text-align:center;' ><a href='https://github.com/XIU2/UserScript'><span>自用的一些乱七八糟 油猴脚本 (github.com)</span></a></td><td style='text-align:center;' ><a href='https://github.com/XIU2/UserScript' target='_blank' class='url'>https://github.com/XIU2/UserScript</a></td><td style='text-align:center;' ><span>一些插件</span></td></tr></tbody></table></figure><h4 id='搜索相关部分'><span>搜索相关部分</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://www.zkdh.net/#term-24'><span>掌酷导航</span></a></td><td style='text-align:center;' ><a href='https://www.zkdh.net/#term-24' target='_blank' class='url'>https://www.zkdh.net/#term-24</a></td><td style='text-align:center;' ><span>导航页面，选择还挺多，聚焦电影剧集</span></td></tr><tr><td style='text-align:center;' ><a href='https://funletu.com/1424.html'><span>bt资源汇总网页</span></a></td><td style='text-align:center;' ><a href='https://funletu.com/1424.html' target='_blank' class='url'>https://funletu.com/1424.html</a></td><td style='text-align:center;' ><span>汇聚一批bt资源搜索站，不错</span></td></tr><tr><td style='text-align:center;' ><a href='https://www.acgbox.link/'><span>ACG BOX</span></a></td><td style='text-align:center;' ><a href='https://www.acgbox.link/' target='_blank' class='url'>https://www.acgbox.link/</a></td><td style='text-align:center;' ><span>ACG网站及各类资源，很好</span></td></tr></tbody></table></figure><h4 id='qbittorrent-tracker-相关'><span>Qbittorrent tracker 相关</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称（如有）</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://github.com/XIU2/TrackersListCollection?tab=readme-ov-file'><span>tracker list</span></a></td><td style='text-align:center;' ><a href='https://github.com/XIU2/TrackersListCollection?tab=readme-ov-file' target='_blank' class='url'>https://github.com/XIU2/TrackersListCollection?tab=readme-ov-file</a></td><td style='text-align:center;' ><span>github上有人整理的仓库</span></td></tr><tr><td style='text-align:center;' ><span>tracker list2</span></td><td style='text-align:center;' ><a href='https://github.com/ngosang/trackerslist'><span>ngosang/trackerslist: Updated list of public BitTorrent trackers (github.com)</span></a></td><td style='text-align:center;' ><span>同上，这个是外国人做的</span></td></tr><tr><td style='text-align:center;' ><span>tracker test</span></td><td style='text-align:center;' ><a href='https://newtrackon.com/' target='_blank' class='url'>https://newtrackon.com/</a></td><td style='text-align:center;' ><span>检测网站，同时有list</span></td></tr></tbody></table></figure><h4 id='powershell-学习'><span>powershell 学习</span></h4><figure><table><thead><tr><th style='text-align:center;' ><span>网站名称</span></th><th style='text-align:center;' ><span>域名</span></th><th style='text-align:center;' ><span>描述</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><a href='https://www.yiibai.com/powershell'><span>易百教程</span></a></td><td style='text-align:center;' ><a href='https://www.yiibai.com/powershell'><span>PowerShell教程 (yiibai.com)</span></a></td><td style='text-align:center;' ><span>powershell中文教程</span></td></tr><tr><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td><td style='text-align:center;' >&nbsp;</td></tr></tbody></table></figure><h4 id='ffmpeg'><span>ffmpeg </span></h4><figure><table><thead><tr><th><span>名称</span></th><th><span>域名</span></th><th><span>描述</span></th></tr></thead><tbody><tr><td><a href='https://www.cnblogs.com/xcj26/articles/18175921'><span>FFMPEG详解(完整版</span></a></td><td>&nbsp;</td><td><span>ffmpeg介绍</span></td></tr></tbody></table></figure><p>&nbsp;</p></div></div>
+</body>
+</html>
