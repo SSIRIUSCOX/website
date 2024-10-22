@@ -1,4 +1,6 @@
-***目录***
+
+
+<a id="top">***目录***</a>
 
 [TOC]
 ---
@@ -20,6 +22,9 @@
 | [磁力草](https://www.cilicao.com/?) |https://www.cilicao.com/? |测试了一下也还不错|
 | [蜜柑计划 - Mikan Project](https://mikan.yujiangqaq.com/) | https://mikan.yujiangqaq.com/|新番国内字幕资源下载，整合的不错|
 
+***<u>[返回顶部](#top)</u>***
+
+
 #### 												字幕部分 
 
 | 网站名称（如有） | 域名 | 描述 |
@@ -31,6 +36,9 @@
 |[SubHD](https://subhd.tv/)  |https://subhd.tv/ |页面内容多，适合范围广，优先 |
 | [字幕库](https://zimuku.vip/) |https://zimuku.vip/ |虽然进网页有验证，但是界面不错，字幕有评分 |
 | [opensubtitle](https://www.opensubtitles.org/zh) | https://www.opensubtitles.org/zh | 英文界面，新番也有，还行 |
+
+***<u>[返回顶部](#top)</u>***
+
 
 #### 											电影剧集部分
 
@@ -44,6 +52,9 @@
 | [磁力草](https://www.cilicao.com/?) |https://www.cilicao.com/? |测试了一下也还不错|
 | [磁力龟]() |https://www.ciligui.org/ |挺全的，动漫电影应该都有，还能看到种子数|
 
+***<u>[返回顶部](#top)</u>***
+
+
 #### 									   	评分/资料网站 
 
 | 网站名称（如有） | 域名 | 描述 |
@@ -53,6 +64,9 @@
 | [metacritic](https://www.metacritic.com/) |https://www.metacritic.com/ | |
 | [AniDB](https://anidb.net/) | | 英文动漫网，很多信息 |
 
+***<u>[返回顶部](#top)</u>***
+
+
 ####							书
 | 网站名称（如有） | 域名 | 描述 |
 | :---: | :----------: |:-----:|
@@ -60,6 +74,9 @@
 |[goodread](https://www.goodreads.com/)|https://www.goodreads.com/|书评网站，很大，英文站|
 |[zlibrary](https://z-lib.id/)|https://z-lib.id/|电子书查找下载|
 |[guteberg](https://www.gutenberg.org/)|https://www.gutenberg.org/|电子书下载，zlib找不到可以在这里找|
+
+***<u>[返回顶部](#top)</u>***
+
 
 #### 												    漫画类
 
@@ -69,6 +86,10 @@
 |[MangaHub](https://mangahub.io/) | https://mangahub.io/| |
 |[ComicExtra](https://comixextra.com/popular-comic) |https://comixextra.com/popular-comic |欧美漫画网站 |
 | | | |
+
+***<u>[返回顶部](#top)</u>***
+
+
 
 #### 												在线观看网站
 
@@ -80,9 +101,10 @@
 | [次元派对](https://www.acg.party/) | https://www.acg.party/| |
 |[搜片](https://soupian.pro/)  | https://soupian.pro/| |
 |[girigiri愛動漫](https://anime.girigirilove.com/) | https://anime.girigirilove.com/ | 还可以的动漫站，视频质量基本720p以上 |
-|  | | |
 
-## 专业性的网站内容
+***<u>[返回顶部](#top)</u>***
+
+## ***专业性的网站内容***
 
 #### 											技术相关部分
 
@@ -90,6 +112,10 @@
 | :---: | :----------: |:-----:|
 |      [毒奶主页](https://limbopro.com/)            |https://limbopro.com/      | 个人主页站点，包含影视，技术类帖     |
 | [自用的一些乱七八糟 油猴脚本 (github.com)](https://github.com/XIU2/UserScript) |https://github.com/XIU2/UserScript | 一些插件 |
+
+***<u>[返回顶部](#top)</u>***
+
+
 
 #### 										搜索相关部分
 
@@ -99,6 +125,10 @@
 | [bt资源汇总网页](https://funletu.com/1424.html) |https://funletu.com/1424.html  | 汇聚一批bt资源搜索站，不错 |
 | [ACG BOX](https://www.acgbox.link/) |https://www.acgbox.link/ | ACG网站及各类资源，很好 |
 
+***<u>[返回顶部](#top)</u>***
+
+
+
 #### 								    Qbittorrent tracker 相关
 
 | 网站名称（如有） | 域名 | 描述 |
@@ -107,6 +137,10 @@
 | tracker list2 | [ngosang/trackerslist: Updated list of public BitTorrent trackers (github.com)](https://github.com/ngosang/trackerslist) | 同上，这个是外国人做的 |
 | tracker test | https://newtrackon.com/ | 检测网站，同时有list |
 
+***<u>[返回顶部](#top)</u>***
+
+
+
 #### 									powershell 学习
 
 |                   网站名称                    |                             域名                             |        描述        |
@@ -114,9 +148,13 @@
 | [易百教程](https://www.yiibai.com/powershell) | [PowerShell教程 (yiibai.com)](https://www.yiibai.com/powershell) | powershell中文教程 |
 |                                               |                                                              |                    |
 
+***<u>[返回顶部](#top)</u>***
+
 #### 										ffmpeg 
 
 | 名称                                                         | 域名 | 描述       |
 | ------------------------------------------------------------ | ---- | ---------- |
 | [FFMPEG详解(完整版](https://www.cnblogs.com/xcj26/articles/18175921) |      | ffmpeg介绍 |
+
+***<u>[返回顶部](#top)</u>***
 
