@@ -79,6 +79,7 @@
 | [缘觉影视](https://www.yjys.cc.ua/) |https://www.yjys.cc.ua/ | |
 | [次元派对](https://www.acg.party/) | https://www.acg.party/| |
 |[搜片](https://soupian.pro/)  | https://soupian.pro/| |
+|[girigiri愛動漫](https://anime.girigirilove.com/) | https://anime.girigirilove.com/ | 还可以的动漫站，视频质量基本720p以上 |
 |  | | |
 
 ## 专业性的网站内容
