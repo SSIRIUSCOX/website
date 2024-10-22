@@ -20,7 +20,7 @@
 |[动漫花园](https://share.dmhy.org/) |https://share.dmhy.org/ |中文网站，资源算齐了，有一点点广告但不影响|
 |[Nyaa](https://nyaa.si/) | https://nyaa.si/ |非常多资源的英文站点,磁力链接 |
 | [磁力草](https://www.cilicao.com/?) |https://www.cilicao.com/? |测试了一下也还不错|
-| [蜜柑计划 - Mikan Project](https://mikan.yujiangqaq.com/) | https://mikan.yujiangqaq.com/|新番国内字幕资源下载，整合的不错|
+| [蜜柑计划 - Mikan Project](https://mikanani.me/) | https://mikanani.me/ |新番国内字幕资源下载，整合的不错|
 
 ***<u>[返回顶部](#top)</u>***
 
