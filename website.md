@@ -34,6 +34,7 @@
 |[Nyaa](https://nyaa.si/) | https://nyaa.si/ |非常多资源的英文站点,磁力链接 |
 | [磁力草](https://www.cilicao.com/?) |https://www.cilicao.com/? |测试了一下也还不错|
 | [蜜柑计划 - Mikan Project](https://mikanani.me/) | https://mikanani.me/ |新番国内字幕资源下载，整合的不错|
+| [Tokyo Toshokan 东京图书馆](https://www.tokyotosho.info/) | https://www.tokyotosho.info/ |外文站点，有seed显示，主动漫|
 
 ***<u>[返回顶部](#top)</u>***
 
@@ -49,6 +50,7 @@
 |[SubHD](https://subhd.tv/)  |https://subhd.tv/ |页面内容多，适合范围广，优先 |
 | [字幕库](https://zimuku.vip/) |https://zimuku.vip/ |虽然进网页有验证，但是界面不错，字幕有评分 |
 | [opensubtitle](https://www.opensubtitles.org/zh) | https://www.opensubtitles.org/zh | 英文界面，新番也有，还行 |
+| [skyey2](https://www.skyey2.com/forum.php?mod=torrents) | https://www.skyey2.com/forum.php?mod=torrents | 测了一下不算全 |
 
 ***<u>[返回顶部](#top)</u>***
 
@@ -57,7 +59,9 @@
 
 | 网站名称（如有） | 域名 | 描述 |
 | :---: | :----------: |:-----:|
+| [The Official Home of YIFY Movies ](https://yts.mx/) | https://yts.mx/ | 很友好界面，资源也齐，电影为主 |
 | [音范丝](https://www.yinfans.me/) | https://www.yinfans.me/     |4K和普通都有，电影为主|
+| [小草磁力 ](https://xcbt1.xyz/) | https://xcbt1.xyz/ |书，电影，动漫都有，有热度，还不错应该|
 |[AnyBT](https://anybt.eth.link/)  |https://anybt.eth.link/ |搜动漫电影剧集，十分推荐，英文网站|
 |[BT之家](https://www.1lou.me/)  |https://www.1lou.me/ |中文站点，|
 | [磁力熊](https://www.cilixiong.com/) | https://www.cilixiong.com/ | 中文站点|
